@@ -1,7 +1,7 @@
 %define		_hordeapp	forwards
 #define		_snap	2005-09-10
 #define		_rc		rc1
-%define		_rel	0.1
+%define		_rel	1
 #
 %include	/usr/lib/rpm/macros.php
 Summary:	forwards - user e-mail forwards module for Horde

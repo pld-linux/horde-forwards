@@ -5,7 +5,7 @@
 #
 %include	/usr/lib/rpm/macros.php
 Summary:	forwards - user e-mail forwards module for Horde
-Summary(pl):	passwd - modu³ do ustawiania przekazywania poczty w Horde
+Summary(pl):	forwards - modu³ do ustawiania przekazywania poczty w Horde
 Name:		horde-%{_hordeapp}
 Version:	3.0
 Release:	%{?_rc:0.%{_rc}.}%{?_snap:0.%(echo %{_snap} | tr -d -).}%{_rel}
@@ -45,6 +45,15 @@ Right now, Forwards provides fairly complete support for setting
 systems via an FTP transport. It now also has drivers for Mdaemon,
 Exim SQL, Exim LDAP, Custom SQL, and SOAP based systems.
 
+%description -l pl
+Forwards to modu³ Horde do ustawiania przekazywania poczty
+elektronicznej z obs³ug± kilku popularnych systemów pocztowych.
+
+Aktualnie Forwards obs³uguje ustawianie przekazywania w stylu .forward
+przy systemach pocztowych opartych na Sendmailu, Courierze i Qmailu
+poprzez transport FTP. Ma tak¿e sterowniki dla systemów Mdaemon, Exim
+SQL, Exim LDAP, Custom SQL i SOAP.
+
 %prep
 %setup -qcT -n %{?_snap:%{_hordeapp}-%{_snap}}%{!?_snap:%{_hordeapp}-%{version}%{?_rc:-%{_rc}}}
 tar zxf %{SOURCE0} --strip-components=1
@@ -62,7 +71,6 @@ cp -a config/* $RPM_BUILD_ROOT%{_sysconfdir}
 echo '<?php ?>' > $RPM_BUILD_ROOT%{_sysconfdir}/conf.php
 touch $RPM_BUILD_ROOT%{_sysconfdir}/conf.php.bak
 cp -a lib locale templates themes $RPM_BUILD_ROOT%{_appdir}
-
 
 ln -s %{_sysconfdir} 	$RPM_BUILD_ROOT%{_appdir}/config
 ln -s %{_docdir}/%{name}-%{version}/CREDITS $RPM_BUILD_ROOT%{_appdir}/docs

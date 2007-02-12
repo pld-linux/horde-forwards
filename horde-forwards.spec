@@ -5,7 +5,7 @@
 #
 %include	/usr/lib/rpm/macros.php
 Summary:	forwards - user e-mail forwards module for Horde
-Summary(pl):	forwards - modu≥ do ustawiania przekazywania poczty w Horde
+Summary(pl.UTF-8):   forwards - modu≈Ç do ustawiania przekazywania poczty w Horde
 Name:		horde-%{_hordeapp}
 Version:	3.0
 Release:	%{?_rc:0.%{_rc}.}%{?_snap:0.%(echo %{_snap} | tr -d -).}%{_rel}
@@ -46,13 +46,13 @@ Right now, Forwards provides fairly complete support for setting
 systems via an FTP transport. It now also has drivers for Mdaemon,
 Exim SQL, Exim LDAP, Custom SQL, and SOAP based systems.
 
-%description -l pl
-Forwards to modu≥ Horde do ustawiania przekazywania poczty
-elektronicznej z obs≥ug± kilku popularnych systemÛw pocztowych.
+%description -l pl.UTF-8
+Forwards to modu≈Ç Horde do ustawiania przekazywania poczty
+elektronicznej z obs≈ÇugƒÖ kilku popularnych system√≥w pocztowych.
 
-Aktualnie Forwards obs≥uguje ustawianie przekazywania w stylu .forward
+Aktualnie Forwards obs≈Çuguje ustawianie przekazywania w stylu .forward
 przy systemach pocztowych opartych na Sendmailu, Courierze i Qmailu
-poprzez transport FTP. Ma takøe sterowniki dla systemÛw Mdaemon, Exim
+poprzez transport FTP. Ma tak≈ºe sterowniki dla system√≥w Mdaemon, Exim
 SQL, Exim LDAP, Custom SQL i SOAP.
 
 %prep

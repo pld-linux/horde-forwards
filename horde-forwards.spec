@@ -1,19 +1,19 @@
 %define		_hordeapp	forwards
 #define		_snap	2005-09-10
 #define		_rc		rc1
-%define		_rel	3
+%define		_rel	1
 #
 %include	/usr/lib/rpm/macros.php
 Summary:	forwards - user e-mail forwards module for Horde
 Summary(pl):	forwards - modu³ do ustawiania przekazywania poczty w Horde
 Name:		horde-%{_hordeapp}
-Version:	3.0
+Version:	3.0.1
 Release:	%{?_rc:0.%{_rc}.}%{?_snap:0.%(echo %{_snap} | tr -d -).}%{_rel}
 License:	ASL
 Group:		Applications/WWW
 #Source0:	ftp://ftp.horde.org/pub/snaps/%{_snap}/%{_hordeapp}-HEAD-%{_snap}.tar.gz
 Source0:	ftp://ftp.horde.org/pub/forwards/%{_hordeapp}-h3-%{version}.tar.gz
-# Source0-md5:	002082cd565881a5a1838131a41d8224
+# Source0-md5:	0a2c16b1ff7ea80a246610d6e3ce6b50
 Source1:	%{name}.conf
 URL:		http://www.horde.org/forwards/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98

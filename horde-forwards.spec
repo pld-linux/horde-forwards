@@ -14,7 +14,6 @@ Source1:	%{name}.conf
 URL:		http://www.horde.org/forwards/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 BuildRequires:	rpmbuild(macros) >= 1.264
-BuildRequires:	tar >= 1:1.15.1
 Requires(post):	sed >= 4.0
 Requires:	horde >= 3.0
 Requires:	php(xml)

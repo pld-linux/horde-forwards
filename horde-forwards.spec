@@ -1,17 +1,13 @@
 %define		_hordeapp	forwards
-#define		_snap	2005-09-10
-#define		_rc		rc1
-%define		_rel	2
 #
 %include	/usr/lib/rpm/macros.php
 Summary:	forwards - user e-mail forwards module for Horde
 Summary(pl.UTF-8):	forwards - moduł do ustawiania przekazywania poczty w Horde
 Name:		horde-%{_hordeapp}
 Version:	3.0.1
-Release:	%{?_rc:0.%{_rc}.}%{?_snap:0.%(echo %{_snap} | tr -d -).}%{_rel}
+Release:	2
 License:	ASL
 Group:		Applications/WWW
-#Source0:	ftp://ftp.horde.org/pub/snaps/%{_snap}/%{_hordeapp}-HEAD-%{_snap}.tar.gz
 Source0:	ftp://ftp.horde.org/pub/forwards/%{_hordeapp}-h3-%{version}.tar.gz
 # Source0-md5:	0a2c16b1ff7ea80a246610d6e3ce6b50
 Source1:	%{name}.conf
@@ -56,8 +52,7 @@ poprzez transport FTP. Ma także sterowniki dla systemów Mdaemon, Exim
 SQL, Exim LDAP, Custom SQL i SOAP.
 
 %prep
-%setup -qcT -n %{?_snap:%{_hordeapp}-%{_snap}}%{!?_snap:%{_hordeapp}-%{version}%{?_rc:-%{_rc}}}
-tar zxf %{SOURCE0} --strip-components=1
+%setup -q
 
 rm -f {,*/}.htaccess
 # considered harmful (horde/docs/SECURITY)

@@ -50,7 +50,7 @@ poprzez transport FTP. Ma także sterowniki dla systemów Mdaemon, Exim
 SQL, Exim LDAP, Custom SQL i SOAP.
 
 %prep
-%setup -q
+%setup -q -n %{_hordeapp}-h3-%{version}
 
 rm -f {,*/}.htaccess
 # considered harmful (horde/docs/SECURITY)

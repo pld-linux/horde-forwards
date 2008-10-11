@@ -5,7 +5,7 @@ Summary:	forwards - user e-mail forwards module for Horde
 Summary(pl.UTF-8):	forwards - moduł do ustawiania przekazywania poczty w Horde
 Name:		horde-%{_hordeapp}
 Version:	3.0.1
-Release:	2
+Release:	3
 License:	ASL
 Group:		Applications/WWW
 Source0:	ftp://ftp.horde.org/pub/forwards/%{_hordeapp}-h3-%{version}.tar.gz
@@ -19,6 +19,9 @@ Requires:	horde >= 3.0
 Requires:	php(xml)
 Requires:	php-common >= 3:4.1.0
 Requires:	webapps
+Suggests:	php(ftp)
+Suggests:	php(ldap)
+Suggests:	php-pear-SOAP
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 

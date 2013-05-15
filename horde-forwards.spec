@@ -5,12 +5,13 @@ Summary:	forwards - user e-mail forwards module for Horde
 Summary(pl.UTF-8):	forwards - moduł do ustawiania przekazywania poczty w Horde
 Name:		horde-%{_hordeapp}
 Version:	3.2.1
-Release:	2
+Release:	3
 License:	ASL
 Group:		Applications/WWW
 Source0:	ftp://ftp.horde.org/pub/forwards/%{_hordeapp}-h3-%{version}.tar.gz
 # Source0-md5:	a5b7242332b6eb87cd15d69a10da09fc
-Source1:	%{name}.conf
+Source1:	%{name}-apache.conf
+Source2:	%{name}-httpd.conf
 URL:		http://www.horde.org/forwards/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 BuildRequires:	rpmbuild(macros) >= 1.264
@@ -22,6 +23,7 @@ Requires:	webapps
 Suggests:	php(ftp)
 Suggests:	php(ldap)
 Suggests:	php-pear-SOAP
+Conflicts:	apache-base < 2.4.0-1
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -71,7 +73,7 @@ cp -a docs/CREDITS $RPM_BUILD_ROOT%{_appdir}/docs
 
 ln -s %{_sysconfdir} 	$RPM_BUILD_ROOT%{_appdir}/config
 install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/apache.conf
-install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/httpd.conf
+install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/httpd.conf
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -96,10 +98,10 @@ fi
 %triggerun -- apache1 < 1.3.37-3, apache1-base
 %webapp_unregister apache %{_webapp}
 
-%triggerin -- apache < 2.2.0, apache-base
+%triggerin -- apache-base
 %webapp_register httpd %{_webapp}
 
-%triggerun -- apache < 2.2.0, apache-base
+%triggerun -- apache-base
 %webapp_unregister httpd %{_webapp}
 
 %files

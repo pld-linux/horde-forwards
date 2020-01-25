@@ -1,6 +1,5 @@
 %define		_hordeapp	forwards
 #
-%include	/usr/lib/rpm/macros.php
 Summary:	forwards - user e-mail forwards module for Horde
 Summary(pl.UTF-8):	forwards - moduł do ustawiania przekazywania poczty w Horde
 Name:		horde-%{_hordeapp}
